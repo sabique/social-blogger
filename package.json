@@ -1,0 +1,26 @@
+{
+  "name": "social-blogger",
+  "version": "1.0.0",
+  "description": "A social blogging site built using NodeJS, Express &amp; MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "watch": "nodemon app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sabique/social-blogger.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sabique/social-blogger/issues"
+  },
+  "homepage": "https://github.com/sabique/social-blogger#readme",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.0"
+  }
+}
