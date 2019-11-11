@@ -32,15 +32,19 @@ User.prototype.validate = function() {
     if(this.data.password > 100) { this.errors.push(`Password cannot exceed 100 characters.`)}
 }
 
-User.prototype.login = function(callback) {
-    this.cleanUp();
-    usersCollection.findOne({username: this.data.username}, (err, attemptedUser) => {
-        if(attemptedUser && attemptedUser.password === this.data.password){
-            callback(`Congrats!!`);
-        } else {
-            callback(`Invalid username/password.`);
-        }
-    });
+User.prototype.login = function() {
+    return new Promise((resolve, reject) => {
+        this.cleanUp();
+        usersCollection.findOne({username: this.data.username}).then((attemptedUser) => {
+            if(attemptedUser && attemptedUser.password === this.data.password){
+                resolve(`Congrats!!`);
+            } else {
+                reject(`Invalid username/password.`);
+            }
+        }).catch((e) => {
+            reject(`Please try again later.`);
+        });
+    })
 }
 
 User.prototype.register = function(){
