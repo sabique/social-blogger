@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/sabique/social-blogger#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "dotenv": "^8.0.0",
     "ejs": "^2.7.1",
     "express": "^4.17.1",
